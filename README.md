@@ -23,18 +23,15 @@ features (month, year).
 
 Upload the Superstore dataset into Databricks using the **DBFS** (Databricks File System), either in **CSV**, **Parquet**, or **Delta** format. You can use the following code to load the data:
 
-```python
-superstore_sales_data_url = "/FileStore/tables/train-5.csv"  # Ensure this is the correct path
-df = spark.read.format("csv") \
+      superstore_sales_data_url = "/FileStore/tables/train-5.csv"  # Ensure this is the correct path
+      df = spark.read.format("csv") \
                 .option("header", "true") \
                 .option("inferSchema", "true") \
                 .load(superstore_sales_data_url)
 
-----Upload the Superstore dataset into Databricks.
+Upload the Superstore dataset into Databricks.
 
------Open the Databricks notebook and run the cells to perform data cleaning, transformation, and analysis.
-
-
+Open the Databricks notebook and run the cells to perform data cleaning, transformation, and analysis.
 
 ** Usage **
 
@@ -42,8 +39,7 @@ df = spark.read.format("csv") \
   
   df = spark.read.format("delta").load("/FileStore/delta/superstore_cleaned")
 
-
-###3. Perform transformations, like calculating Profit Margin and extracting Order Month:
+3. Perform transformations, like calculating Profit Margin and extracting Order Month:
 
   from pyspark.sql.functions import col, month, year
 
@@ -66,7 +62,7 @@ df = spark.read.format("csv") \
 total_sales_by_category.write.format("delta").mode("overwrite").save("/FileStore/delta/total_sales_by_category")
 
 
-#######  Technologies Used  
+##  Technologies Used  
 
 1. Apache Spark (PySpark)
 2. Delta Lake
