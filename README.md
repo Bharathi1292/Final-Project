@@ -36,7 +36,7 @@ df = spark.read.format("csv") \
 
 
 
-##############  Usage  #########
+** Usage **
 
 ## 2..Load the cleaned dataset:
   
@@ -66,7 +66,8 @@ df = spark.read.format("csv") \
 total_sales_by_category.write.format("delta").mode("overwrite").save("/FileStore/delta/total_sales_by_category")
 
 
-#######Technologies Used 
+#######  Technologies Used  
+
 1. Apache Spark (PySpark)
 2. Delta Lake
 3. Databricks (for execution environment)
