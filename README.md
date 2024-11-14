@@ -38,15 +38,17 @@ Open the Databricks notebook and run the cells to perform data cleaning, transfo
 ## 2..Load the cleaned dataset:
   
   df = spark.read.format("delta").load("/FileStore/delta/superstore_cleaned")
+  
+ ## 3.Perform transformations, like calculating Profit Margin and extracting Order Month:
 
-3. Perform transformations, like calculating Profit Margin and extracting Order Month:
+   from pyspark.sql.functions import col, month, year
 
-  from pyspark.sql.functions import col, month, year
-
-  # Add Profit Margin column
+  #Add Profit Margin column
+  
   df_cleaned = df_cleaned.withColumn("Profit Margin", col("Profit") / col("Sales"))
 
-  # Extract month and year from Order Date
+  #Extract month and year from Order Date
+
   df_cleaned = df_cleaned.withColumn("Order_Month", month(col("Order_Date")))
   df_cleaned = df_cleaned.withColumn("Order_Year", year(col("Order_Date")))
 
