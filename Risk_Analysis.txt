@@ -1,0 +1,38 @@
+Risk Analysis
+1. Data Quality Risks
+•	Risk: Missing or inconsistent data in the Super Store dataset could lead to inaccurate insights.
+•	Likelihood: Medium
+•	Impact: High
+•	Mitigation:
+     o	Performed data cleaning in Databricks using PySpark.
+     o	Removed duplicate records and handled missing values by replacing them with appropriate statistical measures (e.g., mean or mode).
+
+
+2. Technical Risks
+•	Risk: Challenges in using Databricks Community Edition, including session timeouts and limited memory.
+•	Likelihood: High
+•	Impact: Medium
+•	Mitigation:
+     o	Saved progress frequently to prevent data loss due to session timeouts.
+     o	Optimized the dataset by working with a smaller sample for testing before scaling up.
+  
+
+
+3. Analysis Risks
+•	Risk: Misinterpreting trends or creating unclear visualizations.
+•	Likelihood: Medium
+•	Impact: High
+•	Mitigation:
+     o	Cross-checked results with raw data to ensure accuracy.
+     o	Created multiple visualizations (e.g., bar charts for sales categories, line charts for trends) to verify insights were consistent.
+
+ 
+
+4. Time Management Risks
+•	Risk: Limited time for completing cleaning, transformation, analysis, and documentation.
+•	Likelihood: High
+•	Impact: High
+•	Mitigation:
+     o	Created a week-by-week timeline for tasks and tracked progress.
+     o	Focused on completing high-priority sections (data cleaning and visualizations) before moving to optional features.
+
